@@ -1,0 +1,138 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  	<meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
+  	<link href="http://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+  	<link type="text/css" rel="stylesheet" href="css/materialize.min.css"  media="screen,projection"/>
+  	<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1.0, user-scalable=no"/>
+  		<title>IITJ-Councelling Service</title>
+  	<link href='http://fonts.googleapis.com/css?family=Lato:400,100,100italic,300,300italic,400italic,700,700italic,900,900italic' rel='stylesheet' type='text/css'>
+	  	<script src="https://maps.googleapis.com/maps/api/js"></script>
+    		<script>
+			var map,marker;
+			var iitj=new google.maps.LatLng(26.2712168,73.0329358);
+			var gpra=new google.maps.LatLng(26.2003991,73.0408967);
+      		function initialize() {
+        	var mapCanvas = document.getElementById('map');
+        	var mapOptions = {
+          	center: iitj,
+          	zoom: 17,
+          	mapTypeId: google.maps.MapTypeId.ROADMAP,
+		  	scrollwheel: false
+        	};
+        	map = new google.maps.Map(mapCanvas, mapOptions);
+		
+			marker=new google.maps.Marker({
+			position:iitj,
+			animation:google.maps.Animation.BOUNCE
+			});
+			marker.setMap(map);
+      		}
+	  
+     	 	google.maps.event.addDomListener(window, 'load', initialize);
+	  		google.maps.event.addDomListener(window, 'resize', initialize);
+	  
+	 	 	function map_gpra() {
+			marker.setPosition(gpra);
+			map.setCenter(gpra);
+			//map.setZoom(16.3);
+	  		}
+	  		function map_iitj() {
+			marker.setPosition(iitj);
+			map.setCenter(iitj);
+			//map.setZoom(17);
+	  		}
+    		</script>
+</head>
+<body bgcolor="#ECF0F1">
+  	<script type="text/javascript" src="https://code.jquery.com/jquery-2.1.1.min.js"></script>
+  	<script type="text/javascript" src="js/materialize.min.js"></script>
+  	&nbsp;
+  	<div class="container" > 
+  		<ul id="dropdown1" class="dropdown-content">
+  			<li><a href="schod.html">SCHOD</a></li>
+  			<li class="divider"></li>
+  			<li><a href="fests.html">FESTS</a></li>
+  			<li class="divider"></li>
+  			<li><a href="#!">TESTIMONALS</a></li>
+		</ul> 
+  		<ul id="dropdown2" class="dropdown-content">
+  			<li><a href="general_faq.html">GENERAL FAQs</a></li>
+  			<li class="divider"></li>
+  			<li><a href="academics_faq.html">ACADEMICS</a></li>
+  			<li class="divider"></li>
+  			<li><a href="counselling_faq.html">COUNCELLING SERVICE</a></li>
+  			<li class="divider"></li>
+  			<li><a href="residential_faq">RESIDENTIAL CAMPUS</a></li>
+		</ul>     
+		<nav>
+  		<div class="nav-wrapper">
+    		<a href="" class="brand-logo"><h5>IITJ Counselling Service</h5></a>
+    		<ul id="nav-mobile" class="right hide-on-med-and-down">
+      			<li><a href="home.html">HOME</a></li>
+      			<li class="active"><a href="">TEAM</a></li>
+      			<li><a class="dropdown-button" href="#!" data-activates="dropdown1">LIFE AT IITJ<i class="material-icons right">arrow_drop_down</i></a></li>
+      			<li><a href="gallery.html">GALLERY</a></li>
+      			<li><a class="dropdown-button" href="#!" data-activates="dropdown2">FAQs<i class="material-icons right">arrow_drop_down</i></a></li>
+      			<li><a href="contacts.html">CONTACT US</a></li>
+    		</ul>
+  
+		</div>
+		</nav>
+  	</div>
+  	&nbsp;
+  	<div class="container" >
+  		  <div class="card-panel">
+  			   <div class="row">
+              <div class="col s12 m8 ">
+                  <strong><h5 style="color: rgb(231, 76, 60)">Counselling Service Team</h5></strong>
+                  <p><font size="4" color="black">Faculty Advisor:</font></p>
+                  <div class="small card">
+                      <div class="card-image waves-effect waves-block waves-light">
+                          <img class="activator" src="teampic/ankitasharma.png"  >
+                      </div>
+                      <div class="card-content">
+                          <span class="card-title activator grey-text text-darken-4">Dr Ankita Sharma<i class="material-icons right">more_vert</i></span>
+                          
+                      </div>
+                      <div class="card-reveal">
+                          <span class="card-title grey-text text-darken-4">Dr Ankita Sharma<i class="material-icons right">close</i></span>
+                          <p>Hometown:Hyderabad</p>
+                          <p>Contact Number:1234567890</p>
+                      </div>
+                  </div>
+                  <p><font size="4" color="black">Student Co-ordinator:</font></p>
+                  <p><font size="4" color="black">Student Assistant Co-ordinator:</font></p>
+              </div>
+            </div>
+  		  </div>
+  	</div>
+  	<div class="container">
+  		<footer class="page-footer">
+            <div class="row">
+              	<div class="col l4 s12">
+                	<center><h4 class="white-text">QUICK LINKS</h4>
+                  <ul>
+                      <li><a class="blue-text text-lighten-3" href="#!">IIT JODHPUR</a></li>
+                      <li><a class="black-text text-lighten-3" href="#!">Student Gymkhana</a></li>
+                      <li><a class="black-text text-lighten-3" href="#!">E-cell</a></li>
+                      <li><a class="black-text text-lighten-3" href="#!">Link 4</a></li>
+                  </ul></center>
+                </div>
+                <div class="col l6 offset-l2 s12">
+          <button class="btn" onclick="map_gpra()">Map GPRA</button><button class="btn" onclick="map_iitj()">Map IITJ</button>
+              <div style="width:100%;height:200px;" id="map">
+          				<!--Map comes here-->
+        			</div>
+        		</div>
+            </div>         
+          	<div class="footer-copyright">
+            	<div class="container">
+            		© Copyright 2016. All Rights Reserved. 
+            		<a class="grey-text text-lighten-4 right" href="#!">Maintained by: IIT Jodhpur </a>
+            	</div>
+          	</div>
+        </footer>
+    </div>
+</body>
+</html>
